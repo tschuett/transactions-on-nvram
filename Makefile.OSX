@@ -1,0 +1,16 @@
+TRUE=true
+SHELL=/bin/zsh
+
+# -Wl,-cache_path_lto,thinlto
+# -fmodules -fcxx-modules -fmodules-cache-path=modules -flto=thin
+CXXFLAGS=-g -O3 -Wall -Wpedantic -Werror -std=c++2a -DUSE_STATISTICS
+CXXFLAGS+=-I. -Iwrite-dsl -Werror=old-style-cast
+#CXXFLAGS+=-Rmodule-build
+LDFLAGS=-flto=thin -std=c++2a
+
+CXX=clang++
+LD=clang++
+
+CLANGFORMAT=clang-format
+
+SRC_CPP=$(filter-out red.cpp avl.cpp avlt-log.cpp red-server.cpp red-client.cpp avl-client.cpp avl-server.cpp, $(wildcard *.cpp) $(wildcard dram/*.cpp)  $(wildcard rbt/*.cpp) $(wildcard avlt/*.cpp))

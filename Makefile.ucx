@@ -1,0 +1,15 @@
+TRUE=/usr/bin/true
+SHELL=/bin/bash  #-flto=thin
+CXXFLAGS=-flto=thin -fexperimental-new-pass-manager -I.
+CXXFLAGS+=-march=skylake-avx512 -g -O3 -Werror -Wall -pedantic
+CXXFLAGS+=-fmodules -fcxx-modules -fmodules-cache-path=modules
+CXXFLAGS+=-std=c++2a -DHAVE_UCX -I. -Idram -Iucx -Iwrite-dsl -DUSE_CLWB
+
+LDFLAGS=-flto=thin -march=skylake-avx512 -std=c++2a -fuse-ld=lld  $(NVRAMLIBS)
+
+CXX=clang++
+LD=clang++
+
+CLANGFORMAT=clang-format
+
+SRC_CPP=$(filter-out red.cpp avl.cpp red-client.cpp red-server.cpp avl-client.cpp avl-server.cpp jsw-common.cpp, $(wildcard *.cpp) $(wildcard ucx/*.cpp)) $(wildcard rbt/*.cpp) $(wildcard avlt/*.cpp)

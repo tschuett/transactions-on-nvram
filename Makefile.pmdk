@@ -1,0 +1,31 @@
+PMDK=/dassw/centos/pmdk/1.5.1
+
+
+PMDK_LIB=$(PMDK)/lib
+PMDK_CPATH=$(PMDK)/include
+
+
+TRUE=/usr/bin/true
+SHELL=/bin/bash  #-flto=thin
+#CXXFLAGS=-DNDEBUG -fexperimental-new-pass-manager -flto=thin -I. -Idram -Ipmdk  -Iwrite-dsl
+CXXFLAGS=-DNDEBUG  -I. -Idram -Ipmdk  -Iwrite-dsl
+#CXXFLAGS+=-fmodules -fcxx-modules -fmodules-cache-path=modules
+CXXFLAGS+= -g -O3 -fno-omit-frame-pointer -Wall -pedantic -std=c++2a
+#CXXFLAGS+=-march=skylake-avx512 -g -O3 -fno-omit-frame-pointer -Wall -pedantic -std=c++2a
+CXXFLAGS+=-DHAVE_PMDK
+CXXFLAGS+=-DUSE_CLFLUSHOPT
+CXXFLAGS+=-I$(PMDK_CPATH)
+# # -DUSE_PMDK #-DUSE_NOFLUSH # # -DUSE_CLFLUSHOPT # -DUSE_CLFLUSH  -DUSE_CLWB# # #  #  # # #  #
+
+#LDFLAGS=-flto=thin -march=skylake-avx512 -std=c++2a -fuse-ld=lld  $(NVRAMLIBS)
+LDFLAGS= -std=c++2a
+LDFLAGS+=-L$(PMDK_LIB) -lpmem
+
+CXX=g++
+LD=g++
+
+CLANGFORMAT=clang-format
+
+#SRC_CPP=$(filter-out main.cpp red-server.cpp red-client.cpp, $(wildcard *.cpp) $(wildcard dram/*.cpp) $(wildcard pmdk/*.cpp) $(wildcard rbt/*.cpp))
+
+SRC_CPP=$(filter-out red.cpp avl.cpp red-server.cpp red-client.cpp avl-server.cpp avl-client.cpp, $(wildcard *.cpp) $(wildcard dram/*.cpp) $(wildcard pmdk/*.cpp)  $(wildcard rbt/*.cpp) $(wildcard avlt/*.cpp))

@@ -1,0 +1,41 @@
+|     |                                                     |
+|-----+-----------------------------------------------------|
+| C0  | flush key                                           |
+| R1  | init variables                                      |
+| R2  | push direction and node onto stack (logging)        |
+| R3  | push direction and node onto stack                  |
+| R4  | which child is not null                             |
+| R5  | fix parent variant 1                                |
+| R6  | fix parent variant 2                                |
+| R7  | find the inorder successor                          |
+| R8  | save the path                                       |
+| R9  | while loop (logging)                                |
+| R10 | while loop                                          |
+| R11 | swap data                                           |
+| R12 | unlink successor and fix parent (logging)           |
+| R13 | unlink successor and fix parent                     |
+| R14 | update balance factors (logging)                    |
+| R15 | fix parent variant 1                                |
+| R16 | fix parent variant 2                                |
+| R17 | update balance factors                              |
+| R18 | RB: init Variables                                  |
+| R19 | RB: update balances                                 |
+| R20 | walk back up the search path (logging)              |
+| R21 | RB update balances II                               |
+| R22 | RB logging for single rotation I                    |
+| R23 | RB single rotation I                                |
+| R24 | RB logging for first single in double rotation      |
+| R25 | RB first single in double rotation                  |
+| R26 | RB logging for second single in double rotation     |
+| R27 | RB second single in double rotation                 |
+| R28 | RB logging for single rotation II                   |
+| R29 | RB single rotation II                               |
+| R30 | AB init variables                                   |
+| R31 | AB update blalance I                                |
+| R32 | AB update blalance II                               |
+| R33 | AB update blalance III                              |
+| R34 | AB final statement                                  |
+
+
+
+needs assert for UpDir

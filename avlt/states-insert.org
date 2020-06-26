@@ -1,0 +1,26 @@
+|     |                                              |
+|-----+----------------------------------------------|
+| C0  | flush key and value                          |
+| A1  | insert new root node                         |
+| A2  | init variables                               |
+| A4  | Insert the new node                          |
+| A7  | update balance factors foor-loop init        |
+| A8  | update balance factors body log              |
+| A9  | update balance factors increment log         |
+| A10 | save rebalance point for parent fix          |
+| A11 | update balance factors body update           |
+| A12 | update balance factors increment update      |
+| A13 | rebalance if necessary log                   |
+| A14 | logging for single rotation                  |
+| A15 | single rotation                              |
+| A16 | logging for adjust_balance                   |
+| A17 | adjust_balance                               |
+| A18 | logging for first single in double rotation  |
+| A19 | first single in double rotation              |
+| A20 | logging for second single in double rotation |
+| A21 | second single in double rotation             |
+| A22 | fix parent first variant                     |
+| A23 | logging fix parent second variant            |
+| A24 | execute fix parent second variant            |
+| A25 | lookahead first loop                         |
+| A26 | lookahead first loop finalize                |
