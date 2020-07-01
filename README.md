@@ -7,6 +7,7 @@ Transactions on Red-black and AVL trees in NVRAM
 Thorsten Schütt, Florian Schintke, Jan Skrzypczak
 
 please cite as:
+
 @misc{schtt2020transactions,
 
     title={Transactions on Red-black and AVL trees in NVRAM},
