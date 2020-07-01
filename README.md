@@ -7,22 +7,16 @@ Transactions on Red-black and AVL trees in NVRAM
 Thorsten Schütt, Florian Schintke, Jan Skrzypczak
 
 please cite as:
-
+```bibtex
 @misc{schtt2020transactions,
-
     title={Transactions on Red-black and AVL trees in NVRAM},
-    
-    author={Thorsten Schütt and Florian Schintke and Jan Skrzypczak},
-    
+    author={Thorsten Schütt and Florian Schintke and Jan Skrzypczak}, 
     year={2020},
-    
     eprint={2006.16284},
-    
     archivePrefix={arXiv},
-    
     primaryClass={cs.DC}
-    
 }
+```
 
 # instructions
 
